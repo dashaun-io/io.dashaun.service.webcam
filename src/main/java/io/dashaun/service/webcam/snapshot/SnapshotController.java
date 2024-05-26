@@ -18,6 +18,11 @@ import java.io.IOException;
 @RestController
 class SnapshotController {
 
+    @ResponseBody
+    @RequestMapping(value = "/", method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
+    public byte[] home() throws IOException {
+        return live();
+    }
 
     @ResponseBody
     @RequestMapping(value = "/live", method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
